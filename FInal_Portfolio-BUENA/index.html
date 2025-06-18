@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/caa3fb7116.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="wendel logo.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p></p>
+            <h1>Hi, I'm <span>Wendel</span><br>Buena from Las pinas</h1>
+        </div>
+    </div>
+</div>
+<!---------------about---------------->
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="Selfie.png" alt="">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About me</h1>
+                <p>
+                    I’m a 23-year-old college student from National University – MOA campus. I'm passionate, goal-oriented, and eager to grow both personally and professionally.
+                </p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experiences')">Experiences</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI?</span><br>Web Designing</li>
+                        <li><span>Web Development</span><br>Web app Development</li>
+                        
+                    </ul>
+                </div>
+                 <div class="tab-contents" id="experiences">
+                    <ul>
+                        <li><span>2023-current</span><br>Web Designing</li>
+                 </div>
+                  <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2018</span><br>Saint francis of assisi College Main campus</li>
+                        <li><span>2023</span><br>University of Perpetual help system DALTA, Las pinas Campus</li>
+                         <li><span>Present</span><br>National University MOA Campus</li>
+        </div>
+    </div>
+</div>
+<!-----------------services-->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>I create and maintain responsive, user-friendly websites tailored to meet client needs.</p>
+                <a href="#">Learn more</a>
+            </div>
+             <div>
+               <i class="fa-solid fa-tablet-button"></i>
+                <h2>Web app Development</h2>
+                <p>I develop functional and intuitive mobile and web applications for various platforms.</p>
+                <a href="#">Learn more</a>
+            </div>    
+        </div>
+    </div>
+</div>
+<!----------------Portfolio---------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="project-list">
+            <div class="project">
+                <img src="Project1.png">
+                <div class="layer">
+                    <h3>Friendster website</h3>
+                    <p>This website is popular back in 2000s social media, i recreated it in my style.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="Project2.png">
+                <div class="layer">
+                    <h3>Registration form</h3>
+                    <p>This Registration form website that can be link to a googlesheet to record Users.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+</div>
+<!----------contact----->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>wendelbuena9@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>+639452683445</p>
+                <div class="social-icons">
+                   <a href="https://www.instagram.com/wenndl_/"><i class="fa-brands fa-instagram"></i></a>
+                   <a href="https://www.facebook.com/?_rdr"><i class="fa-brands fa-facebook"></i></a>
+                   
+                </div>
+                <a href="my-cv.pdf" download class="btn btn2">Download CV</a>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Wendel. </p>
+    </div>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+     function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+<form name="submit-to-google-sheet">
+</form>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbz3_I2z_JZfmmRCYFcGHoit_EZ8jIw6YmM3EB9hH0I42_HK4dEJca4ZOLNClhyv-xR2/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Message sent succesfully"
+        setTimeout(function(){
+            msg.innerHTML = ""
+        },5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>
